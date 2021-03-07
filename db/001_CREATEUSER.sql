@@ -4,6 +4,6 @@ CREATE TABLE IF NOT EXISTS Users(
 		password varchar(60) not null,
 		primary key(id),
 		unique(email),
-		created timestamp defeault current_timestamp
-		modified timestamp default current_timestamp on update current_timestamp
+		created timestamp defeault current_timestamp,
+		modified timestamp default current_timestamp on update current_timestamp;
 	)
