@@ -5,5 +5,5 @@ CREATE TABLE IF NOT EXISTS Users(
 		primary key(id),
 		unique(email),
 		created timestamp default current_timestamp,
-		modified timestamp default current_timestamp on update current_timestamp;
+		modified timestamp default current_timestamp on update current_timestamp
 	)
