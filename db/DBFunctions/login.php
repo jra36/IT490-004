@@ -1,7 +1,7 @@
 <?php
 function login($username, $password){
 	//from dbconnection.php
-	$stmt = getDB()->prepare("SELECT * FROM Users where username = :username LIMIT 1");
+	$stmt = getDB()->prepare("SELECT * FROM Users where email = :username LIMIT 1");
 	$stmt->execute([":username"=>$username]);
 	$result = $stmt->fetch(PDO::FETCH_ASSOC);
 	//TODO do proper checking, maybe user doesn't exist
@@ -12,13 +12,13 @@ function login($username, $password){
 		}
 		else{
 			//must return proepr message blah blah blah see below
-			return array("status"=>403, "message"=>"Eh what's up doc?");
+			return array("status"=>403, "message"=>"Login: Error");
 		}
 	}
 	else{
 		//must return a proper message so that the app can parse it
 		//and display a user friendly message to the user
-		return array("status"=>400, "message"=>"do something");
+		return array("status"=>400, "message"=>"ERROR");
 	}
 }
 ?>
