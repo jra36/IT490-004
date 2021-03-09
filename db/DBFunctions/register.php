@@ -2,7 +2,7 @@
 function register($username, $password){
 	//from dbconnection.php
 	$stmt = getDB()->prepare("INSERT INTO Users (email, password) VALUES (:e, :p)");
-	$hash = password_hash($password, PASSWORD_BCRYPT)
+	$hash = password_hash($password, PASSWORD_BCRYPT);
 	$result = $stmt->execute([":e"=>$username, ":p"=>$hash]);
 	//TODO do proper checking, maybe user doesn't exist
 	if($result){
