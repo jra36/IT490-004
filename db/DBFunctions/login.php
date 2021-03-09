@@ -6,7 +6,7 @@ function login($username, $password){
 	$result = $stmt->fetch(PDO::FETCH_ASSOC);
 	//TODO do proper checking, maybe user doesn't exist
 	if(empty($result)){
-		return array("status"=>403, "User does not exist, try entering credentials again");
+		return array("status"=>400, "User does not exist, try entering credentials again");
 	}
 	if($result){
 		if(password_verify($password, $result["password"])){
