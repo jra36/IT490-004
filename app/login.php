@@ -10,9 +10,14 @@ session_start();
 
 <?php
 if(isset($_POST["submit"])){
+	$data = $_POST;
+	if(!empty($data["username"]) && !empty($data["password"])) {
 	$username = $_POST["username"];
 	$password = $_POST["password"];
-	//TODO validate
+	}
+	else {
+		die('Please fill in all fields');
+	}
 
 	//calls function from MQPublish.inc.php to communicate with MQ
 	$response = login($username, $password);
