@@ -10,14 +10,21 @@ session_start();
 
 <?php
 if(isset($_POST["submit"])){
+	
+	if(!empty($_POST["username"]) && !empty($_POST["password"])) {
 	$username = $_POST["username"];
 	$password = $_POST["password"];
-	//TODO validate
+	}
+	else {
+		die('Please fill in all fields');
+	}
 
 	//calls function from MQPublish.inc.php to communicate with MQ
 	$response = login($username, $password);
 	if($response["status"] == 200){
 		$_SESSION["user"] = $response["data"];
+		var_export($_SESSION, true);
+		//header ("refresh:5; url=dashboard.php")
 	}
 	else{
 		var_export($response);
