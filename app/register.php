@@ -13,15 +13,14 @@ session_start();
 <?php
 if(isset($_POST["submit"])){
   
-	$data = $_POST;
-        if(empty($data["username"]) || !empty($data["password"]) || !empty($data["confirm"])) {
+        if(empty($_POST["username"]) || !empty($_POST["password"]) || !empty($_POST["confirm"])) {
     
              die('Please fill in all fields');
 	}
   
-	else if {
-          $data["password"] != $data["confirm"];
-          die ("Passwords do not match, please enter again.");
+	elseif($_POST["password"] != $_POST["confirm"]) {
+		
+            die ("Passwords do not match, please enter again.");
           }
      
           else {
@@ -36,7 +35,7 @@ if(isset($_POST["submit"])){
 	if($response["status"] == 200){
 		$_SESSION["user"] = $response["data"];
 		var_export($_SESSION, true);
-		header ("refresh:5; url=login.php")
+		header ("refresh:5; url=login.php");
 	}
 	else{
 		var_export($response);
