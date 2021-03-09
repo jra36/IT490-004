@@ -10,8 +10,8 @@ session_start();
 
 <?php
 if(isset($_POST["submit"])){
-	$data = $_POST;
-	if(!empty($data["username"]) && !empty($data["password"])) {
+	
+	if(!empty($_POST["username"]) && !empty($_POST["password"])) {
 	$username = $_POST["username"];
 	$password = $_POST["password"];
 	}
