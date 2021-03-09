@@ -18,6 +18,7 @@ if(isset($_POST["submit"])){
 	$response = login($username, $password);
 	if($response["status"] == 200){
 		$_SESSION["user"] = $response["data"];
+		var_export($_SESSION, true);
 	}
 	else{
 		var_export($response);
