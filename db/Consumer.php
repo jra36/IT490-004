@@ -32,7 +32,7 @@ function request_processor($req){
 		"message" => "Server received request and processed it");
 }
 //will probably need to update the testRabbitMQ.ini path here
-$server = new rabbitMQServer('/../lib/testRabbitMQ.ini', "sampleServer");
+$server = new rabbitMQServer('testRabbitMQ.ini', "sampleServer");
 
 echo "Rabbit MQ Server Start" . PHP_EOL;
 $server->process_requests('request_processor');
