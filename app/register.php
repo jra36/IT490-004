@@ -31,7 +31,7 @@ if(isset($_POST["submit"])){
           }
       
 	//calls function from MQPublish.inc.php to communicate with MQ
-	$response = login($username, $password);
+	$response = register($username, $password);
 	if($response["status"] == 200){
 		$_SESSION["user"] = $response["data"];
 		var_export($_SESSION, true);
