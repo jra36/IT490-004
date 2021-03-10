@@ -13,7 +13,7 @@ session_start();
 <?php
 if(isset($_POST["submit"])){
   
-        if(empty($_POST["username"]) || !empty($_POST["password"]) || !empty($_POST["confirm"])) {
+        if(empty($_POST["username"]) || empty($_POST["password"]) || empty($_POST["confirm"])) {
     
              die('Please fill in all fields');
 	}
