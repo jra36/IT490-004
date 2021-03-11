@@ -96,7 +96,7 @@ class rabbitMQServer
 			$conn = $this->get_connection();
 			$channel = $conn->channel();
 			$this->conn_queue = $channel;
-			$channel->queue_declare($this->queue, false, false, false, true);
+			$channel->queue_declare($this->queue, false, false, false, false);
 			echo "Consuming queue\n";
 			$channel->basic_qos(null, 1, null);
 			$channel->basic_consume($this->queue, '',
