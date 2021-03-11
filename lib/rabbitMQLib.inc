@@ -227,7 +227,7 @@ class rabbitMQClient
 		{
 			$conn = $this->get_connection();
 			$channel = $channel->channel();
-			$channel->exchange_declare($this->exchange, AMQPExchangeType::DIRECT, false, false, false);
+			$channel->exchange_declare($this->exchange, AMQPExchangeType::DIRECT, false, false, true);
 
 
 
