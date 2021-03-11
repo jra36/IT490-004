@@ -1,6 +1,5 @@
 <?php
 require(__DIR__."/MQPublish.inc.php");
-session_start();
 ?>
 <form method="POST">
 <input type="text" name="username"/> Enter UserName
@@ -31,10 +30,9 @@ if(isset($_POST["submit"])){
       
 	//calls function from MQPublish.inc.php to communicate with MQ
 	$response = register($username, $password);
-	if($response["status"] == 200){
-		$_SESSION["user"] = $response["data"];
-		var_export($_SESSION, true);
-		header ("refresh:5; url=login.php");
+	if($response->status == 200){
+		var_export($response->status, true);
+		header("Location: login.php");
 		exit();
 	}
 	else{
