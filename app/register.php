@@ -35,6 +35,7 @@ if(isset($_POST["submit"])){
 		$_SESSION["user"] = $response["data"];
 		var_export($_SESSION, true);
 		header ("refresh:5; url=login.php");
+		exit();
 	}
 	else{
 		var_export($response);
