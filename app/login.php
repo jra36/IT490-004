@@ -24,7 +24,7 @@ if(isset($_POST["submit"])){
 	if($response["status"] == 200){
 		$_SESSION["user"] = $response["data"];
 		var_export($_SESSION, true);
-		//header ("refresh:5; url=dashboard.php")
+		header ("Location: dashboard.php");
 	}
 	else{
 		var_export($response);
