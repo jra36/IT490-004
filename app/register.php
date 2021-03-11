@@ -32,7 +32,7 @@ if(isset($_POST["submit"])){
 	$response = register($username, $password);
 	if($response->status == 200){
 		var_export($response->status, true);
-		header("Location: " . __DIR__ . "/login.php");
+		//header(refresh:5; Location: login.php);
 		exit();
 	}
 	else{
