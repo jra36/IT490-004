@@ -16,7 +16,7 @@ if(isset($_POST["submit"])){
 	$password = $_POST["password"];
 	}
 	else {
-		die('Please fill in all fields');
+		die('Please Fill In All Fields.');
 	}
 
 	//calls function from MQPublish.inc.php to communicate with MQ
