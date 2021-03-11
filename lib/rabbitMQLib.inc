@@ -173,7 +173,7 @@ class rabbitMQClient
 		$conn = $this->get_connection();
 		$this->channel = $conn->channel();
 		$this->callback_queue = $this->queue . '.response';
-		$this->channel->queue_declare($this->callback_queue, false, false, true, false);
+		$this->channel->queue_declare($this->callback_queue, false, false, false, false);
 		/*list($this->callback_queue, ,) = $this->channel->queue_declare(
 				"",
 				false,
@@ -227,7 +227,7 @@ class rabbitMQClient
 		{
 			$conn = $this->get_connection();
 			$channel = $channel->channel();
-			$channel->exchange_declare($this->exchange, AMQPExchangeType::DIRECT, false, false, false);
+			$channel->exchange_declare($this->exchange, AMQPExchangeType::DIRECT, false, false, true);
 
 
 
