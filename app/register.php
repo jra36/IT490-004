@@ -32,7 +32,7 @@ if(isset($_POST["submit"])){
 	$response = register($username, $password);
 	if($response->status == 200){
 		var_export($response->status, true);
-		header("refresh:3; Location: login.php");
+		header("Location: login.php");
 		exit();
 	}
 	else{
