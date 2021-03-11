@@ -15,7 +15,7 @@ function login($username, $password){
 		}
 		else{
 			//must return proepr message blah blah blah see below
-			return array("status"=>403, "message"=>"Login: Error");
+			return array("status"=>403, "message"=>"Password is incorrect, Please Enter Again.");
 		}
 	}
 	else{
