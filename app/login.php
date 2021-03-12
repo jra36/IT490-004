@@ -9,6 +9,8 @@ session_start();
 </form>
 
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', TRUE);
 if(isset($_POST["submit"])){
 	
 	if(!empty($_POST["username"]) && !empty($_POST["password"])) {
