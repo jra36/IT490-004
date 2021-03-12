@@ -25,7 +25,7 @@ if(isset($_POST["submit"])){
 	$response = login($username, $password);
 	if($response->status == 200){
 		var_export($response->status, true);
-		header("Location: login.php");
+		header("Location: dashboard.php");
 		exit();
 	}
 	else{
