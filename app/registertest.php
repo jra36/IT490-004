@@ -99,15 +99,7 @@ a {
 
 <?php
 require(__DIR__."/MQPublish.inc.php");
-?>
-/*<form method="POST">
-<input type="text" name="username"/> Enter UserName
-<input type="password" name="password"/> Enter Password
- <input type="password" name="confirm"/> Reenter Same Password
-<input type="submit" name="submit" value="Login"/>
-</form>*/
 
-<?php
 if(isset($_POST["submit"])){
   
         if(empty($_POST["username"]) || empty($_POST["password"]) || empty($_POST["confirm"])) {
