@@ -9,6 +9,8 @@ session_start();
 </form>
 
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', TRUE);
 if(isset($_POST["submit"])){
 	
 	if(!empty($_POST["username"]) && !empty($_POST["password"])) {
@@ -21,10 +23,10 @@ if(isset($_POST["submit"])){
 
 	//calls function from MQPublish.inc.php to communicate with MQ
 	$response = login($username, $password);
-	if($response["status"] == 200){
-		$_SESSION["user"] = $response["data"];
-		var_export($_SESSION, true);
-		header ("Location: dashboard.php");
+	if($response->status == 200){
+		var_export($response->status, true);
+		header("Location: dashboard.php");
+		exit();
 	}
 	else{
 		var_export($response);
