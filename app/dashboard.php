@@ -32,7 +32,5 @@ h1 {
   	<input type="text" id="fname" name="fname" size = "40" >
   	<input type="submit" value="Submit" >
 </form> 
-
-
 </body>
 </html>
