@@ -133,7 +133,7 @@ span.psw {
 
 <div id="id01" class="modal">
   
-  <form class="modal-content animate" action="~ubuntu/app/dashboard.php" method="POST">
+  <form class="modal-content animate" action="dashboard.php" method="POST">
 
     <div class="container">
       <label for="uname"><b>Username</b></label>
