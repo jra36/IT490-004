@@ -4,6 +4,7 @@
 //to divide up code and assign to different team members without having too many hurdles
 require(__DIR__."/MQFunctions/login.php");
 require(__DIR__."/MQFunctions/register.php");
+require(__DIR__."/MQFunctions/query.php");
 //TODO include other functions here as they're developed
 //TODO include only this file when you need to use any of the functions
 ?>
