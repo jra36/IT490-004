@@ -5,7 +5,7 @@ function get_recipes($query){
 		require_once(__DIR__.'/../../lib/get_host_info.inc');
 		require_once(__DIR__.'/../../lib/rabbitMQLib.inc');
 
-		$client = new RabbitMQClient(__DIR__.'/../../lib/testRabbitMQ.ini', 'testServer');
+		$client = new RabbitMQClient(__DIR__.'/../../lib/testRabbitMQ.ini', 'secondServer');
 		$msg = array("query"=>$query, "type"=>"query");
 		$response = $client->send_request($msg);
 		return $response;
