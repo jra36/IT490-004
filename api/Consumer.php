@@ -3,7 +3,7 @@
 require_once(__DIR__.'/../lib/path.inc');
 require_once(__DIR__.'/../lib/get_host_info.inc');
 require_once(__DIR__.'/../lib/rabbitMQLib.inc');
-require(__DIR__.'/../db/dbconnection.php");
+require(__DIR__.'/../db/dbconnection.php');
 
 //separate files for DB calls so it's easier to divide work
 //require(__DIR__."/DBFunctions/login.php");
