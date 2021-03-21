@@ -5,7 +5,7 @@ require_once(__DIR__.'/../lib/get_host_info.inc');
 require_once(__DIR__.'/../lib/rabbitMQLib.inc');
 require(__DIR__.'/../db/dbconnection.php');
 
-//separate files for DB calls so it's easier to divide work
+//separate files for API calls so it's easier to divide work
 //require(__DIR__."/DBFunctions/login.php");
 //require(__DIR__."/DBFunctions/register.php");
 require(__DIR__."/MQFunctions/get_recipes.php");
