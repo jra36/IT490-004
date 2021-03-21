@@ -35,7 +35,7 @@ h1 {
 </body>
 </html>
 
-//require(__DIR__.'/../api/MQPublish.inc.php');
+//require(__DIR__."/MQPublish.inc.php");
 
 
 
