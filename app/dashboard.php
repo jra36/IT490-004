@@ -27,10 +27,15 @@ h1 {
 <body>
 <b><h1 style="font-size:50px;"><p class="dashed">All About Strawberry Recipes</h1></b></p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <b><h1 style="font-size:30px;"> </h></b>
-<form action="dashboard.php">
-	<label for="fname">Find recipes here:</label><br>
-  	<input type="text" id="fname" name="fname" size = "40" >
+<form method="POST">
+	<label for="query">Find recipes here:</label><br>
+  	<input type="text" id="query" name="query" size = "40" >
   	<input type="submit" value="Submit" >
 </form> 
 </body>
 </html>
+
+//require(__DIR__."/MQPublish.inc.php");
+
+
+
