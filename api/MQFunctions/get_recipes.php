@@ -22,7 +22,7 @@ $err = curl_error($curl);
 
 
 curl_close($curl);
-return $response; //not sure if needed
+//return $response; //not sure if needed
 
 
 if ($err) {
