@@ -17,10 +17,12 @@ curl_setopt_array($curl, [
 	],
 ]);
 
-$response = curl_exec($curl);
+$response = json_decode(curl_exec($curl), true);
 $err = curl_error($curl);
 
+return $response; //not sure if needed
 curl_close($curl);
+
 
 if ($err) {
 	echo "cURL Error #:" . $err;
