@@ -20,8 +20,9 @@ curl_setopt_array($curl, [
 $response = json_decode(curl_exec($curl), true);
 $err = curl_error($curl);
 
-return $response; //not sure if needed
+
 curl_close($curl);
+return $response; //not sure if needed
 
 
 if ($err) {
