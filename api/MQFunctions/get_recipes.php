@@ -3,7 +3,7 @@ function get_recipes($q) {
 $curl = curl_init();
 
 curl_setopt_array($curl, [
-	CURLOPT_URL => "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/searchComplex?limitLicense=false&offset=0&number=10&query=$q&includeIngredients=strawberry&minVitaminA=500&minFiber=0&maxPotassium=1000&minSelenium=0",
+	CURLOPT_URL => "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/searchComplex?limitLicense=false&offset=0&number=10&query=$q&includeIngredients=strawberry",
 	CURLOPT_RETURNTRANSFER => true,
 	CURLOPT_FOLLOWLOCATION => true,
 	CURLOPT_ENCODING => "",
