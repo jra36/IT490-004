@@ -22,13 +22,12 @@ $response = json_decode(curl_exec($curl), true);
 $err = curl_error($curl);
 
 curl_close($curl);
-return $response; //not sure if needed
-
 
 if ($err) {
 	echo "cURL Error #:" . $err;
 } else {
 	echo $response;
 }
+return $response;
 }
 ?>
