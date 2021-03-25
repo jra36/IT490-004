@@ -47,23 +47,28 @@ if(isset($_POST["submit"])){
 		if(!empty($_POST["query"])) {
 		$query = $_POST["query"];
 	}
+   }
 	else {
 		die('Please Enter a Query.');
 	}
 
 	//calls function from MQPublish.inc.php to communicate with MQ
 	$response = get_recipes($query);
+	$output = array("data"=>json_decode($query,true));
 	
-	if($response){
-		var_export($response->status, true);
+	if(isset($output)) {
+	     foreach ($output as $post) {
+             echo '<h3>' . $post['title'] . '</h3>';
+         }
 	}
-	else{
-		var_export($response);
-	}
-	}
-
-	
-}
+	//if($response){
+	//	var_export($response->status, true);
+	//}
+	//else{
+		//var_export($response);
+	//}
+      
+ }
 ?>
 
 
