@@ -56,7 +56,8 @@ if(isset($_POST["submit"])){
 	
 	if(isset($output['data'])) {
 	     foreach ($output as $post) {
-             echo '<h3>' . $post['title'] . '</h3>';
+             //echo '<h3>' . $post['title'] . '</h3>';
+	    echo "<pre>" . var_export($output,true)  . "</pre>";
          }
 	}
 	//if($response){
