@@ -58,7 +58,7 @@ if(isset($_POST["submit"])){
 	     foreach ($output as $post) {
              echo '<h3>' . $post['title'] . '</h3>';
          }
-	*/}
+	}*/
 	//if($response){
 	//	var_export($response->status, true);
 	//}
