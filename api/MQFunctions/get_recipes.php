@@ -20,9 +20,11 @@ curl_setopt_array($curl, [
 $response = json_decode(curl_exec($curl), true);
 $err = curl_error($curl);
 
-
 curl_close($curl);
-//return $response; //not sure if needed
+	
+	
+//$recipes = $response['value']
+//return $recipes; //not sure if needed
 
 
 if ($err) {
