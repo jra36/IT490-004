@@ -38,14 +38,14 @@ require(__DIR__."/MQPublish.inc.php");
 error_reporting(E_ALL);
 ini_set('display_errors', TRUE);
 
-if(isset($_POST["submit"])){
+if(isset($_POST["submit"]) && isset($_POST["query"]) && !empty($_POST["query"])){
 	
-	if(isset($_POST["query"])) {
+	//if(isset($_POST["query"])) {
 	
-		if(!empty($_POST["query"])) {
+		//if(!empty($_POST["query"])) {
 		$query = $_POST["query"];
 	}
-   }
+  // }
 	else {
 		die('Please Enter a Query.');
 	}
@@ -67,7 +67,7 @@ if(isset($_POST["submit"])){
 		//var_export($response);
 	//}
       
- }
+ //}
 ?>
 </body>
 </html>
