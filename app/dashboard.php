@@ -54,10 +54,9 @@ if(isset($_POST["submit"])){
 	$response = get_recipes($query);
 	$output = array("data"=>json_decode($query,true));
 	
-	if(isset($output['data'])) {
+	if($output) {
 	     foreach ($output as $post) {
-             //echo '<h3>' . $post['title'] . '</h3>';
-	    echo "<pre>" . var_export($output,true)  . "</pre>";
+             echo '<h3>' . $post['title'] . '</h3>';
          }
 	}
 	//if($response){
