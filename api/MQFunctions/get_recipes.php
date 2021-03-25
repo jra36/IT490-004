@@ -23,8 +23,8 @@ $err = curl_error($curl);
 curl_close($curl);
 	
 	
-//$recipes = $response['value']
-//return $recipes; //not sure if needed
+$recipes = $response['value']
+return $recipes; //not sure if needed
 
 
 if ($err) {
