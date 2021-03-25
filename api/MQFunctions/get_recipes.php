@@ -25,7 +25,7 @@ curl_close($curl);
 	
 	
 //$recipes = $response['value'] //not sure if needed
-//return $recipes; //not sure if needed
+return $response; //not sure if needed
 
 
 if ($err) {
