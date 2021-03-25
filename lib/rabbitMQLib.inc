@@ -162,7 +162,7 @@ class rabbitMQClient
 
 		$body = $response->body;
 		$payload = json_decode($body);
-		var_dump($payload);
+		//var_dump($payload);
 		if (!isset($payload)){
 			$payload = "[empty or invalid response]";
 		}
