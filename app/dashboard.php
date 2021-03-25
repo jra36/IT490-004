@@ -32,9 +32,7 @@ h1 {
   	<input type="text" name="query" size = "40" >
   	<button type="submit" name="submit">Search</button>
 </form> 
-</body>
-</html>
-
+	
 <?php
 require(__DIR__."/MQPublish.inc.php");
 error_reporting(E_ALL);
@@ -70,6 +68,10 @@ if(isset($_POST["submit"])){
       
  }
 ?>
+</body>
+</html>
+
+
 
 
 
