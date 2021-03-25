@@ -29,7 +29,7 @@ function request_processor($req){
 		//case "echo":
 			//return array("return_code"=>'0', "message"=>"Echo: " .$req["message"]);
     case "query":
-      return get_recipes($req["query"]);
+      return get_recipes($req['query']);
 	}
 	return array("return_code" => '0',
 		"message" => "Server received request and processed it");
