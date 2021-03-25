@@ -31,7 +31,7 @@ function request_processor($req){
     case "query":
         $response = get_recipes($req['query']);
         var_export($response, true);
-	return get_recipes($req['query']);
+	return $response;
 	}
 	return array("return_code" => '0',
 		"message" => "Server received request and processed it");
