@@ -52,7 +52,7 @@ if(isset($_POST["submit"])){
 
 	//calls function from MQPublish.inc.php to communicate with MQ
 	$response = get_recipes($query);
-	$output = array("data"=>json_decode($query,true));
+	$output = array("data"=>json_decode($response,true));
 	
 	if(isset($output['data'])) {
 	     foreach ($output as $post) {
