@@ -121,10 +121,11 @@ if(isset($_POST["submit"])){
           $username = $_POST["username"];
 	  $password = $_POST["password"];
           $confirm = $_POST["confirm"];
+	  $roleid = $_POST["role"];
           }
       
 	//calls function from MQPublish.inc.php to communicate with MQ
-	$response = register($username, $password);
+	$response = register($username, $password, $roleid);
 	if($response->status == 200){
 		var_export($response->status, true);
 		header("Location: login.php");
