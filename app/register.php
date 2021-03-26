@@ -80,10 +80,16 @@ a {
 
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="password" id="password" required>
+    
 
     <label for="psw-repeat"><b>Repeat Password</b></label>
     <input type="password" placeholder="Repeat Password" name="confirm" id="confirm" required>
+    
+     <label for="role"><b>Choose Role (1 for Admin, 2 for Manager, 3 for Client)</b></label>
+    <input type="text" placeholder="Choose Role" name="role" id="role" required>
+       
     <hr>
+	    
     <button type="submit" class="registerbtn" name="submit" value="Login">Register</button>
   </div>
   
