@@ -23,7 +23,7 @@ form{margin:auto; border:2px dashed black; padding:20px; width:300px; }
 <form action = "admindashboard.php" autocomplete ="off">
 <option value = '' >Please Choose an option from below: </option><br>
 <input type = radio name = "choice" id = "Create" value = "Create" > Create Strawberry Recipes<br>
-<input type = radio name = "choice" id = "Search" value = "Search" > Search for a Strawberry Recipe<br>
+<input type = radio name = "choice" id = "Search" value = "Search" > Search For A Strawberry Recipe<br>
 <input type = radio name = "choice" id = "Clear" value = "Clear" > Delete Recipe<br>
 <input type = radio name = "choice" id = "Favorite" value = "Favorite" > Favorite Recipe<br><br>
 
@@ -61,6 +61,7 @@ var ptrDescription = document.getElementById("description")
 ptrCreate.addEventListener("click", F)
 ptrSearch.addEventListener("click", F)
 ptrClear.addEventListener("click", F)
+ptrFavorite.addEventListener("click", F)
 function F(){
 	ptrName.style.display =  "none" 
 	ptrQuery.style.display =  "none"
@@ -88,6 +89,10 @@ function F(){
 		ptrID.style.display = "block"
 	
 	}
+    if(this.value == "Favorite") {
+		ptrID.style.display = "block"
+    }
+
 }
 	
 </script>
