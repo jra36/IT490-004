@@ -63,19 +63,19 @@ if(isset($_POST["submit"]) && isset($_POST["query"]) && !empty($_POST["query"]))
 				<h3><?php echo $post['title'];?></h3>
 				<img height="200px" width="200px" src="<?php echo $post['image'];?>"/>
 			</header>
-			<hr>
 			<section>
-				<h4>ID of Recipe</h3>
+				<h4><u>ID of Recipe</u></h3>
 				<p><?php echo $post['id'];?></p>
 			</section>
 			<section>
-				<h4>Likes</h4>
+				<h4><u>Likes</u></h4>
 				<p><?php echo $post['likes'];?></p>
 			</section>
 			<section>
-				<h4>Used Ingredient Count</h5>
+				<h4><u>Used Ingredient Count</u></h5>
 				<p><?php echo $post['usedIngredientCount'];?></p>
 			</sections>
+			<hr>
 			
 		</article>
 	<?php endforeach; ?>
