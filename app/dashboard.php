@@ -55,7 +55,7 @@ if(isset($_POST["submit"]) && isset($_POST["query"]) && !empty($_POST["query"]))
 	echo var_export($response, true);
 	
 	if(isset($response["results"]))  {
-	     foreach ($response as $post) {
+	     foreach ($response["results"] as $post) {
              echo '<h3>' . $post['title'] . '</h3>';
          }
 	}
