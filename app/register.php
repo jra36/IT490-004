@@ -80,10 +80,16 @@ a {
 
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="password" id="password" required>
+    
 
     <label for="psw-repeat"><b>Repeat Password</b></label>
     <input type="password" placeholder="Repeat Password" name="confirm" id="confirm" required>
+    
+     <label for="role"><b>Choose Role (1 for Admin, 2 for Manager, 3 for Client)</b></label>
+    <input type="text" placeholder="Choose Role" name="role" id="role" required>
+       
     <hr>
+	    
     <button type="submit" class="registerbtn" name="submit" value="Login">Register</button>
   </div>
   
@@ -115,10 +121,11 @@ if(isset($_POST["submit"])){
           $username = $_POST["username"];
 	  $password = $_POST["password"];
           $confirm = $_POST["confirm"];
+	  $roleid = $_POST["role"];
           }
       
 	//calls function from MQPublish.inc.php to communicate with MQ
-	$response = register($username, $password);
+	$response = register($username, $password, $roleid);
 	if($response->status == 200){
 		var_export($response->status, true);
 		header("Location: login.php");

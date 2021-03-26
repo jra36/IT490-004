@@ -161,8 +161,8 @@ class rabbitMQClient
 		$this->channel->basic_ack($response->get('delivery_tag'));
 
 		$body = $response->body;
-		$payload = json_decode($body);
-		var_dump($payload);
+		$payload = json_decode($body, true);
+		//var_dump($payload);
 		if (!isset($payload)){
 			$payload = "[empty or invalid response]";
 		}
