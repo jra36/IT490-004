@@ -1,23 +1,3 @@
-<?php
-session_start();
-require(__DIR__."/MQPublish.inc.php");
-error_reporting(E_ALL);
-ini_set('display_errors', TRUE);
-
-if(isset($_POST["submit"]) && isset($_POST["query"]) && !empty($_POST["query"])){
-	
-	
-		$query = $_POST["query"];
-	}
-
-	else {
-		die('Please Enter a Query.');
-	}
-
-	//calls function from MQPublish.inc.php to communicate with MQ
-	$response = get_recipes($query);
-?>
-
 <!DOCTYPE html>
 <html>
 <meta charset="UTF-8">
