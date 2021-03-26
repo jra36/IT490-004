@@ -77,7 +77,7 @@ if(isset($_POST["submit"]) && isset($_POST["query"]) && !empty($_POST["query"]))
 			</section>
 			<section>
 				<h4><u>More Information To Follow.</u></h5>
-				//<p><?php echo $post['usedIngredientCount'];?></p>
+				<p><?php echo "TBD";?></p>
 			</sections>
 			<hr>
 			
