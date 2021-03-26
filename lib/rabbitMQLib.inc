@@ -55,7 +55,7 @@ class rabbitMQServer
 				// message wants a response
 				// process request
 				$body = $req->body;
-				$payload = json_decode($body, true, true);
+				$payload = json_decode($body, true);
 				//$payload['message'] = "Echo " . $payload['message'];
 				$response;
 				if (isset($this->callback)){
@@ -161,7 +161,7 @@ class rabbitMQClient
 		$this->channel->basic_ack($response->get('delivery_tag'));
 
 		$body = $response->body;
-		$payload = json_decode($body);
+		$payload = json_decode($body, true);
 		//var_dump($payload);
 		if (!isset($payload)){
 			$payload = "[empty or invalid response]";
