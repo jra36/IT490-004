@@ -54,7 +54,7 @@ if(isset($_POST["submit"]) && isset($_POST["query"]) && !empty($_POST["query"]))
 	$response = get_recipes($query);
 	echo var_export($response, true);
 	
-	if(isset($response))  {
+	if(isset($response["results"]))  {
 	     foreach ($response as $post) {
              echo '<h3>' . $post['title'] . '</h3>';
          }
