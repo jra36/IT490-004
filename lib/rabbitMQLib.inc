@@ -55,7 +55,7 @@ class rabbitMQServer
 				// message wants a response
 				// process request
 				$body = $req->body;
-				$payload = json_decode($body, true);
+				$payload = json_decode($body, true, true);
 				//$payload['message'] = "Echo " . $payload['message'];
 				$response;
 				if (isset($this->callback)){
