@@ -1,3 +1,39 @@
+<?php
+require(__DIR__."/MQPublish.inc.php");
+
+if(isset($_POST["submit"])){
+  
+        if(empty($_POST["username"]) || empty($_POST["password"]) || empty($_POST["confirm"])) {
+    
+             die('Please fill in all fields');
+	}
+  
+	elseif($_POST["password"] != $_POST["confirm"]) {
+		
+            die ("Passwords do not match, please enter again.");
+          }
+     
+          else {
+      	
+          $username = $_POST["username"];
+	  $password = $_POST["password"];
+          $confirm = $_POST["confirm"];
+	  $roleid = $_POST["role"];
+          }
+      
+	//calls function from MQPublish.inc.php to communicate with MQ
+	$response = register($username, $password, $roleid);
+	if($response->status == 200){
+		header("Location: login.php");
+		exit();
+	}
+	else{
+		var_export($response);
+	}
+
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -100,39 +136,3 @@ a {
 
 </body>
 </html>
-
-<?php
-require(__DIR__."/MQPublish.inc.php");
-
-if(isset($_POST["submit"])){
-  
-        if(empty($_POST["username"]) || empty($_POST["password"]) || empty($_POST["confirm"])) {
-    
-             die('Please fill in all fields');
-	}
-  
-	elseif($_POST["password"] != $_POST["confirm"]) {
-		
-            die ("Passwords do not match, please enter again.");
-          }
-     
-          else {
-      	
-          $username = $_POST["username"];
-	  $password = $_POST["password"];
-          $confirm = $_POST["confirm"];
-	  $roleid = $_POST["role"];
-          }
-      
-	//calls function from MQPublish.inc.php to communicate with MQ
-	$response = register($username, $password, $roleid);
-	if($response->status == 200){
-		header("Location: login.php");
-		exit();
-	}
-	else{
-		var_export($response);
-	}
-
-}
-?>
