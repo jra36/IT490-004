@@ -61,29 +61,26 @@ if(isset($_POST["submit"]) && isset($_POST["query"]) && !empty($_POST["query"]))
 		<article>
 			<header>
 				<h3><?php echo $post['title'];?></h3>
-				<h6><?php echo $post['id'];?></h6>
-				<img height="100px" width="100px" src="<?php echo $post['image'];?>"/>
+				<img height="200px" width="200px" src="<?php echo $post['image'];?>"/>
 			</header>
+			<hr>
+			<section>
+				<h4>ID of Recipe</h3>
+				<p><?php echo $post['id'];?></p>
+			</section>
 			<section>
 				<h4>Likes</h4>
 				<p><?php echo $post['likes'];?></p>
 			</section>
 			<section>
-				<h4>Used Ingredient Count</h4>
+				<h4>Used Ingredient Count</h5>
 				<p><?php echo $post['usedIngredientCount'];?></p>
 			</sections>
-			<footer>
-				<section>
-					<h5>Missed Ingredient Count</h5>
-					<time><?php echo $post['missedIngredientCount'];?></time>
-				</section>
-			
-			</footer>
 			
 		</article>
 	<?php endforeach; ?>
 	<?php else: ?>
-		<div>No Recipes Found.</div>
+		<div>No Recipes Found For Your Query.</div>
 
 	<?php endif; ?>
 
