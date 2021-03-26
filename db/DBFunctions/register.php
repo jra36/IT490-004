@@ -5,6 +5,7 @@ function register($username, $password, $roleid){
 	$hash = password_hash($password, PASSWORD_BCRYPT);
 	$result = $stmt->execute([":e"=>$username, ":p"=>$hash, ":r"=>$roleid]);
 	//TODO do proper checking, maybe user doesn't exist
+	var_export($stmt->errorInfo());
 	if($result){
 		return array("status"=>200, "message"=>"You've registered, greetings");
 	}
@@ -14,6 +15,6 @@ function register($username, $password, $roleid){
 		return array("status"=>400, "message"=>"User already exists, please choose different credentials.");
 		
 	}
-	var_export($stmt->errorInfo());
+	
 }
 ?>
