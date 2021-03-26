@@ -1,9 +1,9 @@
 <?php
 function register($username, $password){
 	//from dbconnection.php
-	$stmt = getDB()->prepare("INSERT INTO Users (email, password) VALUES (:e, :p)");
+	$stmt = getDB()->prepare("INSERT INTO Users (email, password, roleid) VALUES (:e, :p, :r");
 	$hash = password_hash($password, PASSWORD_BCRYPT);
-	$result = $stmt->execute([":e"=>$username, ":p"=>$hash]);
+	$result = $stmt->execute([":e"=>$username, ":p"=>$hash, ":r"=>$roleid]);
 	//TODO do proper checking, maybe user doesn't exist
 	if($result){
 		return array("status"=>200, "message"=>"You've registered, greetings");
