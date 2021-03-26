@@ -1,5 +1,5 @@
 <?php
-function register($username, $password){
+function register($username, $password, $roleid){
 	//from dbconnection.php
 	$stmt = getDB()->prepare("INSERT INTO Users (email, password, roleid) VALUES (:e, :p, :r");
 	$hash = password_hash($password, PASSWORD_BCRYPT);
