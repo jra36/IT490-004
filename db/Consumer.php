@@ -22,7 +22,7 @@ function request_processor($req){
 		case "login":
 			return login($req['username'], $req['password']);
 		case "register":
-			return register($req["username"], $req["password"]);
+			return register($req["username"], $req["password"], $req["roleid"]);
 		case "validate_session":
 			return validate($req['session_id']);
 		case "echo":

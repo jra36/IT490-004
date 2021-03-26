@@ -29,37 +29,42 @@ h1 {
 <b><h1 style="font-size:30px;"> </h></b>
 <form method="POST">
 	<label for="query">Find recipes here:</label><br>
-  	<input type="text" id="query" name="query" size = "40" >
-  	<input type="submit" value="submit" >
+  	<input type="text" name="query" size = "40" >
+  	<button type="submit" name="submit">Search</button>
 </form> 
-</body>
-</html>
-
+	
 <?php
+session_start();
 require(__DIR__."/MQPublish.inc.php");
 error_reporting(E_ALL);
 ini_set('display_errors', TRUE);
-if(isset($_POST["query"])){
+
+if(isset($_POST["submit"]) && isset($_POST["query"]) && !empty($_POST["query"])){
 	
-	if(!empty($_POST["query"])) {
-	$query = $_POST["query"];
+	
+		$query = $_POST["query"];
 	}
+
 	else {
 		die('Please Enter a Query.');
 	}
 
 	//calls function from MQPublish.inc.php to communicate with MQ
 	$response = get_recipes($query);
+
 	
-	if($response){
-		var_export($response->status, true);
-	}
-	else{
-		var_export($response);
+	if(isset($response["results"]))  {
+	     foreach ($response["results"] as $post) {
+             echo '<h3>' . $post['title'] . '</h3>';
+         }
 	}
 
-}
+     
 ?>
+</body>
+</html>
+
+
 
 
 
