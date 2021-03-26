@@ -34,6 +34,7 @@ h1 {
 </form> 
 	
 <?php
+session_start();
 require(__DIR__."/MQPublish.inc.php");
 error_reporting(E_ALL);
 ini_set('display_errors', TRUE);
