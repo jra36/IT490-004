@@ -12,6 +12,8 @@ function register($username, $password, $roleid){
 		//must return a proper message so that the app can parse it
 		//and display a user friendly message to the user
 		return array("status"=>400, "message"=>"User already exists, please choose different credentials.");
+		
 	}
+	var_export($stmt->errorInfo());
 }
 ?>
