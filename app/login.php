@@ -110,7 +110,7 @@ if(isset($_POST["submit"])){
 
 	//calls function from MQPublish.inc.php to communicate with MQ
 	$response = login($username, $password);
-	if($response->status == 200){
+	if($response["status"] == 200){
 		var_export($response->status, true);
 		header("Location: dashboard.php");
 		exit();
