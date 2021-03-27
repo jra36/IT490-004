@@ -50,8 +50,6 @@ Enter a description of the recipe.
 var ptrCreate = document.getElementById("Create")
 var ptrSearch = document.getElementById("Search")
 var ptrClear = document.getElementById("Clear")
-
-
 var ptrName = document.getElementById("name") 
 var ptrQuery= document.getElementById("query")
 var ptrID= document.getElementById("id")
@@ -61,7 +59,6 @@ var ptrIngredient2 = document.getElementById("ingredient2")
 var ptrIngredient3 = document.getElementById("ingredient3")
 var ptrImage = document.getElementById("image")
 var ptrDescription = document.getElementById("description")
-
 ptrCreate.addEventListener("click", F)
 ptrSearch.addEventListener("click", F)
 ptrClear.addEventListener("click", F)
