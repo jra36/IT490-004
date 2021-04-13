@@ -8,7 +8,7 @@ require(__DIR__.'/../db/dbconnection.php');
 //separate files for API calls so it's easier to divide work
 //require(__DIR__."/DBFunctions/login.php");
 //require(__DIR__."/DBFunctions/register.php");
-require(__DIR__."/MQFunctions/get_recipes.php");
+require(__DIR__."/MQFunctions/get_recipe_id.php");
 //TODO add more as they're developed
 
 function request_processor($req){
