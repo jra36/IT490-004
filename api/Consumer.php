@@ -29,7 +29,7 @@ function request_processor($req){
 		//case "echo":
 			//return array("return_code"=>'0', "message"=>"Echo: " .$req["message"]);
     case "query":
-        $response = get_recipes($req['query']);
+        $response = get_recipe_id($req['query']);
         var_export($response, true);
 	return $response;
 	}
