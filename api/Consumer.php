@@ -9,6 +9,7 @@ require(__DIR__.'/../db/dbconnection.php');
 //require(__DIR__."/DBFunctions/login.php");
 //require(__DIR__."/DBFunctions/register.php");
 require(__DIR__."/MQFunctions/get_recipe_id.php");
+require(__DIR__."/MQFunctions/get_recipe_info.php");
 //TODO add more as they're developed
 
 function request_processor($req){
@@ -30,9 +31,18 @@ function request_processor($req){
 			//return array("return_code"=>'0', "message"=>"Echo: " .$req["message"]);
     case "query":
         $response = get_recipe_id($req['query']);
+			
+	if(isset($response["results"])){
+	foreach($response["results"] as $post){
+		$id = $post['id'];
+		$response = get_recipe_info($id);
+		//echo var_export($post, true);
+		
+	}
         var_export($response, true);
 	return $response;
 	}
+			
 	return array("return_code" => '0',
 		"message" => "Server received request and processed it");
 }
