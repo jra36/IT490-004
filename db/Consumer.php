@@ -27,6 +27,9 @@ function request_processor($req){
 			return validate($req['session_id']);
 		case "echo":
 			return array("return_code"=>'0', "message"=>"Echo: " .$req["message"]);
+		case "query:
+			$response = get_recipe_id($req['query']);
+			//if db results are empty(if empty), hit the API, and then get recipe info.php
 	}
 	return array("return_code" => '0',
 		"message" => "Server received request and processed it");
