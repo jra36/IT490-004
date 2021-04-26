@@ -32,14 +32,14 @@ function request_processor($req){
     case "query":
         $response = get_recipe_id($req['query']);
 			
-	if(isset($response["results"])){
-	/*foreach($response["results"] as $post){
+	/*if(isset($response["results"])){
+	foreach($response["results"] as $post){
 		$id = $post['id'];
 		$response = get_recipe_info($id);
 		//echo var_export($post, true);
 		
-	}
-        var_export($response, true);*/
+	}*/
+        var_export($response, true);
 	return $response;
 	}
 			
