@@ -1,5 +1,5 @@
 <?php
-function get_recipes($q) {
+function get_recipe_id($q) {
 $curl = curl_init();
 
 curl_setopt_array($curl, [
