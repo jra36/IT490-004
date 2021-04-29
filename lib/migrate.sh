@@ -1,4 +1,5 @@
 #we can maybe hardcode static ref to host
+#!/bin/bash
 host="3.237.32.127"
 user="ubuntu"
 #get source from arg or default to current dir
