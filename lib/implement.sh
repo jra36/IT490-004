@@ -1,5 +1,4 @@
-source=$1
-destination=$2
+#!/bin/bash
 # make sure source and destination are absolute paths or prepare for a bad day
 for filename in $source/*; do
         base=$(basename "$filename")
