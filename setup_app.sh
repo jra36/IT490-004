@@ -55,6 +55,7 @@ sudo nano /etc/apache2/mods-enabled/php7.4.conf
 
 #enable ssh login
 echo "PermitRootLogin prohibit-password to PermitRootLogin yes"
+echo "PasswordAuthentication no to PasswordAuthentication yes"
 sudo nano /etc/ssh/sshd_config
 
 #restart ssh service
