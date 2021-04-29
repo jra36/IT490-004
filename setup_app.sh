@@ -2,12 +2,6 @@
 
 #This is a migration script meant for the APP server
 
-# Check if running as root  
-if [ "$(id -u)" != "0" ]; then  
-echo "This script must be run as root" 1>&2  
-exit 1  
-fi  
-su
 #Update refs
 sudo apt update -y
 #Upgrade packages
