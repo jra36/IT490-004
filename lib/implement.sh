@@ -1,5 +1,5 @@
-#!/bin/bash
 # make sure source and destination are absolute paths or prepare for a bad day
+#!/bin/bash
 for filename in $source/*; do
         base=$(basename "$filename")
         echo $(basename "$filename")
