@@ -14,10 +14,10 @@ sudo apt upgrade -y
 #Install the necessary packages for API VM
 sudo apt install -y php7.4 php7.4-cli php-mbstring php-bcmath composer
 
-#Changes password of Ubuntu User to make SSH'ing easier
+#Changes password of Ubuntu User to make allow easier SSH access
 sudo passwd ubuntu
 
-#Opens the file for editing SSH permission
+#Opens the file for editing SSH permissions
 sudo nano /etc/ssh/sshd_config
 
 
