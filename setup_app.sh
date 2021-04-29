@@ -52,3 +52,13 @@ sudo a2enmod userdir
 #one file needs to be manually edited to allow userdir to be servable
 sudo nano /etc/apache2/mods-enabled/php7.4.conf
 #turn userdir engine On from Off
+
+#enable ssh login
+echo "PermitRootLogin prohibit-password to PermitRootLogin yes"
+sudo nano /etc/ssh/sshd_config
+
+#restart ssh service
+sudo service ssh restart
+
+#set password to test
+sudo passwd ubuntu
