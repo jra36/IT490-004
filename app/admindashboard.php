@@ -101,7 +101,7 @@ function F(){
 	}
     if(this.value == "View Favorited Recipes") {
 		//call View Favorites Function, add a require
-        //viewfavorite.php
+        //viewfavorite();
         
         //or perhaps this would be needed on the functions.php page aka
         //if($choice == "Favorite")
