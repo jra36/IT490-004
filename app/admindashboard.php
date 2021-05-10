@@ -1,3 +1,7 @@
+<?php
+require_once(__DIR__. '/../db/DBFunctions/viewfavorite.php');
+?>
+
 <!DOCTYPE html>
 
 <meta charset = "utf-8">
@@ -20,12 +24,13 @@ form{margin:auto; border:2px dashed black; padding:20px; width:300px; }
 </style>
 
 
-<form action = "admindashboard.php" autocomplete ="off">
+<form action = "functions.php" method="POST" autocomplete ="off">
 <option value = '' >Please Choose an option from below: </option><br>
 <input type = radio name = "choice" id = "Create" value = "Create" > Create Strawberry Recipes<br>
 <input type = radio name = "choice" id = "Search" value = "Search" > Search For A Strawberry Recipe<br>
 <input type = radio name = "choice" id = "Clear" value = "Clear" > Delete Recipe<br>
-<input type = radio name = "choice" id = "Favorite" value = "Favorite" > Favorite Recipe<br><br>
+
+<input type = button name = "choice" id = "Favorite" value = "View Favorited Recipes" ><br><br>
 
 
 <div id = "name" ><input type = text name= "name"  > Enter Recipe Name<br></div>
@@ -94,8 +99,13 @@ function F(){
 		ptrID.style.display = "block"
 	
 	}
-    if(this.value == "Favorite") {
-		ptrID.style.display = "block"
+    if(this.value == "View Favorited Recipes") {
+		//call View Favorites Function, add a require
+        //viewfavorite.php
+        
+        //or perhaps this would be needed on the functions.php page aka
+        //if($choice == "Favorite")
+        	//viewfavorite();
     }
 }
 	
