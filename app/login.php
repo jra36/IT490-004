@@ -116,18 +116,23 @@ if(isset($_POST["submit"])){
 		
 	$_SESSION["user"] = $response["data"];
       
-	if(isset($_SESSION["user"]["roleid"]) && $_SESSION["user"]["roleid"] == 1 || $_SESSION["user"]["roleid"] == 2) 
+	if(isset($_SESSION["user"]["roleid"]) && $_SESSION["user"]["roleid"] == 1 || $_SESSION["user"]["roleid"] == 2) {
 		//var_export($response->status, true);
 		header("Location: admindashboard.php");
 		//exit();
 	}
        
-	header("Location: dashboard.php");
-    }
+	elseif(isset($_SESSION["user"]["roleid"]) && $_SESSION["user"]["roleid"] == 1) {
+		
+		header("Location: dashboard.php");
+	}
+    
   
 	else{
 		var_export($response);
 	}
+  }
+}
 
 
 ?>
