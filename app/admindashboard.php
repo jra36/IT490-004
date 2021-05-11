@@ -1,5 +1,6 @@
 <?php
 require_once(__DIR__. '/../db/DBFunctions/viewfavorite.php');
+echo '<a href="logout.php">Click here to logout!</a>';
 ?>
 
 <!DOCTYPE html>
