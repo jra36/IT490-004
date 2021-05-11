@@ -122,7 +122,7 @@ if(isset($_POST["submit"])){
 		//exit();
 	}
        
-	elseif(isset($_SESSION["user"]["roleid"]) && $_SESSION["user"]["roleid"] == 1) {
+	elseif(isset($_SESSION["user"]["roleid"]) && $_SESSION["user"]["roleid"] == 3) {
 		
 		header("Location: dashboard.php");
 	}

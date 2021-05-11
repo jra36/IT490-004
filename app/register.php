@@ -94,7 +94,7 @@ a {
   </div>
   
   <div class="container signin">
-    <p>Already have an account? <a href="http://107.23.167.135/~ubuntu/app/login.php">Sign in</a>.</p>
+    <p>Already have an account? <a href="http://app-load-balancer-818186467.us-east-2.elb.amazonaws.com/~ubuntu/app/login.php">Sign in</a>.</p>
   </div>
 </form>
 
