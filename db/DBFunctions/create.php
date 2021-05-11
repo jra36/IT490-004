@@ -4,7 +4,7 @@ function create_recipe($name, $id, $calories, $ingredient1, $ingredient2, $ingre
 	$stmt = getDB()->prepare("INSERT INTO Recipes (name, id, calories, ingredient1, ingredient2, ingredient3,
 	image, description)
 	VALUES (:n, :i, :c, :in1, :in2, :in3, :im, :d)");
-	$result = $stmt->execute([":n"=>$name, ":i"=>$id, ":c"=>$calories, ":in1"=>$ingredient1, ":in2"=>$ingredient2
+	$result = $stmt->execute([":n"=>$name, ":i"=>$id, ":c"=>$calories, ":in1"=>$ingredient1, ":in2"=>$ingredient2,
 	":in3"=>$ingredient3, ":im"=>$image, ":d"=>$description]);
 	//TODO do proper checking, maybe user doesn't exist
 	if($result){
