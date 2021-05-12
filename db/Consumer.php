@@ -39,6 +39,7 @@ function request_processor($req){
 			
 			if ($result) {
 				$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+			}
 				
 		        //Fetch API	
 			if(!results || count($results) === 0) {
@@ -49,16 +50,18 @@ function request_processor($req){
 			$id = $post['id'];
 			$response = get_recipe_info($id);
 			}
+		}
+	}
 			
 			foreach ($response as $r) {
-			$q = [
-			     "INSERT INTO Recipes (name of many columns) VALUES (:title, :nutrient1, :ingredient2])
-			  ]
+			$q = "INSERT INTO Recipes (name of many columns) VALUES (:title, :nutrient1, :ingredient2])"
+			
 			  
 			   $db = getDB();
 			   $stmt = $db->prepare($q);
 			   $stmt->execute([":title=>$r['title'], ":nutrient1:"=>$r['nutrient1'], ":ingredient2:"=>$r['ingredient2']);
-			
+			}
+
 			  return $response;
 			*/
 			
