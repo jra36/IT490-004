@@ -16,7 +16,7 @@ if($choice == "Create")
 		$description = $_POST["description"];
 		create_recipe($name, $id, $calories, $ingredient1, $ingredient2, $ingredient3, $image, $description); //this sends the variables across MQ, and the DB Consumer has a function to insert these values into Database and return a message of success
 	}
-if($choice == "Find")
+if($choice == "Search")
 	
 	{
 		$query = $_POST["query"];
