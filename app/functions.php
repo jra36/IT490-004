@@ -1,5 +1,6 @@
 <?php
 require(__DIR__."/MQPublish.inc.php"); //MQPublish.inc.php would include a require for all the functions located in app/MQFunctions
+echo '<br><br><a href="admindashboard.php">Click here to go back to the list of services!</a><br><br>'; 
 
 $choice = $_POST["choice"];
 
