@@ -32,8 +32,35 @@ function request_processor($req){
 		case "echo":
 			return array("return_code"=>'0', "message"=>"Echo: " .$req["message"]);
 		case "query":
+			/*
+			$stmt = $db->prepare("SELECT * FROM Recipes WHERE query like :query");
+			$result = $stmt->execute([":query"=>"%$req['query']%"]);
+			
+			if ($result) {
+				$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+				
+		        //Fetch API	
+			if(!results || count($results) === 0) {
 			$response = get_recipe_id($req['query']);
-			//if db results are empty(if empty), hit the API, and then get recipe info.php
+				
+			if(isset($response["results"])){
+			foreach($response["results"] as $post){
+			$id = $post['id'];
+			$response = get_recipe_info($id);
+			}
+			
+			foreach ($response as $r) {
+			$q = [
+			     "INSERT INTO Recipes (name of many columns) VALUES ($r['title], $r['nutrient1'], $r['ingredient2'])
+			  ]
+			  
+			   $db = getDB();
+			   $stmt = $db->prepare($q);
+			   $stmt->execute();
+			
+			  return $results;
+			*/
+			
 		case "create":
 			return create_recipe($req["name"], $req["id"], $req["calories"], $req["ingredient1"], $req["ingredient2"], $req["ingredient3"], $req["image"], $req["description"]);
 		case "delete":
