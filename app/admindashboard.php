@@ -17,11 +17,11 @@ body {
 }
 </style>
 </head>
-<body>
+</body>
 
 
 <style> selector {property:value;}
-#name, #query, #id, #calories, #ingredient1, #ingredient2, #ingredient3 {display: none;}
+#name, #query, #id, #calories, #ingredient1, #ingredient2, #ingredient3, #image {display: none;}
 form{margin:auto; border:2px dashed black; padding:20px; width:300px; }
 </style>
 
@@ -39,17 +39,20 @@ form{margin:auto; border:2px dashed black; padding:20px; width:300px; }
 <div id = "query" ><input type = text name= "query"  > Enter Recipe To Search For<br></div>
 <div id = "id" ><input type = text name= "id"  > Enter Recipe ID<br></div>
 <div id = "calories"  ><input type = text name= "calories"   > Enter Calories<br></div>
-<div id = "ingredient1"  ><input type = text name= "ingredient1"   > Enter Ingredient 1<br>
-<div id = "ingredient2"  ><input type = text name= "ingredient2"   > Enter Ingredient 2<br>
-<div id = "ingredient3"  ><input type = text name= "ingredient3"   > Enter Ingredient 3<br>
-<div id = "image"  ><input type = text name= "image"   > Enter URL of Recipe Image<br>
-<div id = "description"  >
+<div id = "ingredient1"  ><input type = text name= "ingredient1"   > Enter Ingredient 1<br></div>
+<div id = "ingredient2"  ><input type = text name= "ingredient2"   > Enter Ingredient 2<br></div>
+<div id = "ingredient3"  ><input type = text name= "ingredient3"   > Enter Ingredient 3<br></div>
+
+<div id = "image"  ><input type = text name= "image"   > Enter URL of Recipe Image<br></div>
+
+<div id = "description">
 <textarea name =description rows="4" col="50">
 Enter a description of the recipe.
 	</textarea> Enter description
+ 
 </div> 
+<input type = submit>   
 <br>
-<input type = submit>
 </form>
 
 
@@ -90,7 +93,7 @@ function F(){
 		ptrIngredient2.style.display =  "block"
 		ptrIngredient3.style.display =  "block"
 		ptrImage.style.display = "block"
-                ptrDescription.style.display = "block"
+        ptrDescription.style.display = "block"
 	
 	}
 	if(this.value == "Search"){
