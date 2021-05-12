@@ -8,12 +8,12 @@ function create_recipe($name, $id, $calories, $ingredient1, $ingredient2, $ingre
 	":in3"=>$ingredient3, ":im"=>$image, ":d"=>$description]);
 	//TODO do proper checking, maybe user doesn't exist
 	if($result){
-		return array("status"=>200, "message"=>"You've created a recipe!");
+		return array("message"=>"You've created a recipe!");
 	}
 	else{
 		//must return a proper message so that the app can parse it
 		//and display a user friendly message to the user
-		return array("status"=>400, "message"=>"Failed to create recipe");
+		return array("message"=>"Failed to create recipe");
 		
 	}
 	
