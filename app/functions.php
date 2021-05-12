@@ -27,7 +27,7 @@ if($choice == "Search")
 		
 	}
 	
-if($choice == "Delete")
+if($choice == "Clear")
 	
 	{
 		$id = $_POST["id"]; 
