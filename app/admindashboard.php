@@ -95,7 +95,7 @@ function F(){
         ptrDescription.style.display = "block"
 	
 	}
-	if(this.value == "Find"){
+	if(this.value == "Search"){
 		ptrQuery.style.display = "block"
 		
 	}
