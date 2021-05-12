@@ -34,6 +34,8 @@ function request_processor($req){
 			//if db results are empty(if empty), hit the API, and then get recipe info.php
 		case "create":
 			return create_recipe($req["name"], $req["id"], $req["calories"], $req["ingredient1"], $req["ingredient2"], $req["ingredient3"], $req["image"], $req["description"]);
+		case "delete":
+			return delete_recipe($req["id"]);
 	}
 	return array("return_code" => '0',
 		"message" => "Server received request and processed it");
