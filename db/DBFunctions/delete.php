@@ -6,14 +6,12 @@ function delete_recipe($id){
 	$result = $stmt->execute([":i"=>$id]);
 	//TODO do proper checking, maybe user doesn't exist
 	if($result){
-		echo "<br><br>";
-		return array("message"=>"Successfully deleted recipe.");
+		return array("<br>message"=>"Successfully deleted recipe.");
 	}
 	else{
 		//must return a proper message so that the app can parse it
 		//and display a user friendly message to the user
-		echo "<br><br>";
-		return array("message"=>"Failed to delete recipe.");
+		return array("<br>message"=>"Failed to delete recipe.");
 		
 	}
 	
