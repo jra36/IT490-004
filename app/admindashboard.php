@@ -28,7 +28,7 @@ form{margin:auto; border:2px dashed black; padding:20px; width:300px; }
 <form action = "functions.php" method="POST" autocomplete ="off">
 <option value = '' >Please Choose an option from below: </option><br>
 <input type = radio name = "choice" id = "Create" value = "Create" > Create Strawberry Recipes<br>
-<input type = radio name = "choice" id = "Search" value = "Search" > Search For A Strawberry Recipe<br>
+<input type = radio name = "choice" id = "Find" value = "Find" > Search For A Strawberry Recipe<br>
 <input type = radio name = "choice" id = "Clear" value = "Clear" > Delete Recipe<br>
 
 <input type = button name = "choice" id = "Favorite" value = "View Favorited Recipes" ><br><br>
@@ -95,7 +95,7 @@ function F(){
         ptrDescription.style.display = "block"
 	
 	}
-	if(this.value == "Search"){
+	if(this.value == "Find"){
 		ptrQuery.style.display = "block"
 		
 	}
