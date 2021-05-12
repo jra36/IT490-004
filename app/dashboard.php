@@ -11,8 +11,8 @@ p.dashed {
  
 }
 /*body {
-  //background-image: url('https://mommyshomecooking.com/wp-content/uploads/2019/05/Easy-Strawberry-Sauce-Recipe-Photo-15.jpg');
-  //background-size: 700px 800px;
+  background-image: url('https://mommyshomecooking.com/wp-content/uploads/2019/05/Easy-Strawberry-Sauce-Recipe-Photo-15.jpg');
+  background-size: 700px 800px;
   
  
 }*/
@@ -27,10 +27,11 @@ h1 {
 <body>
 <b><h1 style="font-size:50px;"><p class="dashed">All About Strawberry Recipes</h1></b></p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <b><h1 style="font-size:30px;"> </h></b>
-<form method="POST">
+<form action = "functions.php" method="POST" autocomplete ="off">
 	<label for="query">Find recipes here:</label><br>
-  	<input type="text" name="query" size = "40" >
-  	<button type="submit" name="submit">Search</button>
+  	<input type="text" name="query" size = "35" >
+  	<button type="submit" name="submit">Search For Recipes</button><br>
+    <input type = button name = "choice" id = "Favorite" value = "View Favorited Recipes" ><br><br>
 </form>
 	
 <div id="output"> 	
@@ -55,7 +56,7 @@ if(isset($_POST["submit"]) && isset($_POST["query"]) && !empty($_POST["query"]))
 	$response = get_recipes($query);
 ?>
 
-
+	//question if because the results returned by the get_recipe_info function doesn't have the keyword "results", is it sufficient to just say if(isset($response)
 	<?php  if(isset($response["results"])): ?>
 	<?php foreach($response["results"] as $post): ?>
 		<article>

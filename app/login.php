@@ -98,6 +98,7 @@ require(__DIR__."/MQPublish.inc.php");
 session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', TRUE);
+
 if(isset($_POST["submit"])){
 	
 	if(!empty($_POST["username"]) && !empty($_POST["password"])) {
@@ -110,14 +111,28 @@ if(isset($_POST["submit"])){
 
 	//calls function from MQPublish.inc.php to communicate with MQ
 	$response = login($username, $password);
+  
 	if($response["status"] == 200){
-		var_export($response->status, true);
-		header("Location: dashboard.php");
-		exit();
+		
+	$_SESSION["user"] = $response["data"];
+      
+	if(isset($_SESSION["user"]["roleid"]) && $_SESSION["user"]["roleid"] == 1 || $_SESSION["user"]["roleid"] == 2) {
+		//var_export($response->status, true);
+		header("Location: admindashboard.php");
+		//exit();
 	}
+       
+	elseif(isset($_SESSION["user"]["roleid"]) && $_SESSION["user"]["roleid"] == 3) {
+		
+		header("Location: dashboard.php");
+	}
+    
+  
 	else{
 		var_export($response);
 	}
-
+  }
 }
+
+
 ?>

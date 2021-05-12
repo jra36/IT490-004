@@ -8,6 +8,8 @@ require(__DIR__."/dbconnection.php");
 //separate files for DB calls so it's easier to divide work
 require(__DIR__."/DBFunctions/login.php");
 require(__DIR__."/DBFunctions/register.php");
+require(__DIR__."/DBFunctions/create.php");
+require(__DIR__."/DBFunctions/delete.php");
 //TODO add more as they're developed
 
 function request_processor($req){
@@ -20,13 +22,20 @@ function request_processor($req){
 	$type = $req['type'];
 	switch($type){
 		case "login":
-			return login($req['username'], $req['password']);
+			return login($req["username"], $req["password"]);
 		case "register":
 			return register($req["username"], $req["password"], $req["roleid"]);
 		case "validate_session":
 			return validate($req['session_id']);
 		case "echo":
 			return array("return_code"=>'0', "message"=>"Echo: " .$req["message"]);
+		case "query":
+			$response = get_recipe_id($req['query']);
+			//if db results are empty(if empty), hit the API, and then get recipe info.php
+		case "create":
+			return create_recipe($req["name"], $req["id"], $req["calories"], $req["ingredient1"], $req["ingredient2"], $req["ingredient3"], $req["image"], $req["description"]);
+		case "delete":
+			return delete_recipe($req["id"]);
 	}
 	return array("return_code" => '0',
 		"message" => "Server received request and processed it");
