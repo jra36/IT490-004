@@ -1,6 +1,7 @@
 <?php
 //require_once(__DIR__. '/../db/DBFunctions/viewfavorite.php');
 echo '<a href="logout.php">Click here to logout!</a>';
+echo '<br><br><a href="admindashboard.php">Click here to go back to the list of services!</a><br><br>'; 
 ?>
 
 <!DOCTYPE html>
