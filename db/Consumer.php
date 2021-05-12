@@ -10,6 +10,8 @@ require(__DIR__."/DBFunctions/login.php");
 require(__DIR__."/DBFunctions/register.php");
 require(__DIR__."/DBFunctions/create.php");
 require(__DIR__."/DBFunctions/delete.php");
+require(__DIR__."/../api/MQFunctions/get_recipe_id.php");
+require(__DIR__."/../api/MQFunctions/get_recipe_info.php");
 //TODO add more as they're developed
 
 function request_processor($req){
