@@ -32,6 +32,7 @@ function request_processor($req){
 		case "echo":
 			return array("return_code"=>'0', "message"=>"Echo: " .$req["message"]);
 		case "query":
+			return array("message"=>"Hi.");
 			/*
 			$stmt = $db->prepare("SELECT * FROM Recipes WHERE query like :query");
 			$result = $stmt->execute([":query"=>"%$req['query']%"]);
