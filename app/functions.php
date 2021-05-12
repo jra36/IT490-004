@@ -32,6 +32,7 @@ if($choice == "Clear")
 	{
 		$id = $_POST["id"]; 
 		delete_recipe($id);
+		echo "Recipe successfully deleted!";
 	}
 	
 ?>
