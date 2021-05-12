@@ -10,6 +10,8 @@ require(__DIR__."/DBFunctions/login.php");
 require(__DIR__."/DBFunctions/register.php");
 require(__DIR__."/DBFunctions/create.php");
 require(__DIR__."/DBFunctions/delete.php");
+require(__DIR__."/../api/MQFunctions/get_recipe_id.php");
+require(__DIR__."/../api/MQFunctions/get_recipe_info.php");
 //TODO add more as they're developed
 
 function request_processor($req){
@@ -30,8 +32,35 @@ function request_processor($req){
 		case "echo":
 			return array("return_code"=>'0', "message"=>"Echo: " .$req["message"]);
 		case "query":
+			/*
+			$stmt = $db->prepare("SELECT * FROM Recipes WHERE query like :query");
+			$result = $stmt->execute([":query"=>"%$req['query']%"]);
+			
+			if ($result) {
+				$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+				
+		        //Fetch API	
+			if(!results || count($results) === 0) {
 			$response = get_recipe_id($req['query']);
-			//if db results are empty(if empty), hit the API, and then get recipe info.php
+				
+			if(isset($response["results"])){
+			foreach($response["results"] as $post){
+			$id = $post['id'];
+			$response = get_recipe_info($id);
+			}
+			
+			foreach ($response as $r) {
+			$q = [
+			     "INSERT INTO Recipes (name of many columns) VALUES (:title, :nutrient1, :ingredient2])
+			  ]
+			  
+			   $db = getDB();
+			   $stmt = $db->prepare($q);
+			   $stmt->execute([":title=>$r['title'], ":nutrient1:"=>$r['nutrient1'], ":ingredient2:"=>$r['ingredient2']);
+			
+			  return $response;
+			*/
+			
 		case "create":
 			return create_recipe($req["name"], $req["id"], $req["calories"], $req["ingredient1"], $req["ingredient2"], $req["ingredient3"], $req["image"], $req["description"]);
 		case "delete":
