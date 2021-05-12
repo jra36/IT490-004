@@ -51,14 +51,14 @@ function request_processor($req){
 			
 			foreach ($response as $r) {
 			$q = [
-			     "INSERT INTO Recipes (name of many columns) VALUES ($r['title], $r['nutrient1'], $r['ingredient2'])
+			     "INSERT INTO Recipes (name of many columns) VALUES (:title, :nutrient1, :ingredient2])
 			  ]
 			  
 			   $db = getDB();
 			   $stmt = $db->prepare($q);
-			   $stmt->execute();
+			   $stmt->execute([":title=>$r['title'], ":nutrient1:"=>$r['nutrient1'], ":ingredient2:"=>$r['ingredient2']);
 			
-			  return $results;
+			  return $response;
 			*/
 			
 		case "create":
