@@ -32,6 +32,8 @@ function request_processor($req){
 		case "echo":
 			return array("return_code"=>'0', "message"=>"Echo: " .$req["message"]);
 		case "query":
+			
+			/*
 			$db = getDB();
 			$stmt = $db->prepare("SELECT * FROM Recipes WHERE name like :query");
 			$query = $req['query'];
@@ -43,6 +45,7 @@ function request_processor($req){
 				
 		        //Fetch API	
 			if(!results || count($results) === 0) {
+			
 			$response = get_recipe_id($req['query']);
 				
 			if(isset($response["results"])){
@@ -51,7 +54,7 @@ function request_processor($req){
 			$response = get_recipe_info($id);
 			}
 		}
-	}
+	//}
 			
 			foreach ($response as $r) {
 			$q = "INSERT INTO Recipes (title) VALUES (:title)";
@@ -63,12 +66,35 @@ function request_processor($req){
 			}
 
 			  return $response;
+			  */
+			//$response = get_recipe_id($req['query']);
+			//var_export($response, true);
+			
+			$response = get_recipe_id($req['query']);
+				
+			/*if(isset($response["results"])){
+			foreach($response["results"] as $post){
+			$id = $post['id'];
+			$response = get_recipe_info($id);
+			}*/
+		//}
+			return $response;
 			
 			
 		case "create":
 			return create_recipe($req["name"], $req["id"], $req["calories"], $req["ingredient1"], $req["ingredient2"], $req["ingredient3"], $req["image"], $req["description"]);
 		case "delete":
 			return delete_recipe($req["id"]);
+			
+		case "query2":
+			$db = getDB();
+			$stmt = $db->prepare("SELECT * FROM Recipes WHERE name like :query");
+			$query = $req['query'];
+			$result = $stmt->execute([":query"=>"%$query%"]);
+			if ($result) {
+				$response = $stmt->fetchAll(PDO::FETCH_ASSOC);
+			}
+			return $response;
 	}
 	return array("return_code" => '0',
 		"message" => "Server received request and processed it");

@@ -23,6 +23,7 @@ if($choice == "Search")
 		$query = $_POST["query"];
 		$response = send_user_recipe($query);
 	
+
 		if(isset($response)) {
 		foreach($response as $post){
 			$image = $post["image"];
@@ -44,7 +45,7 @@ if($choice == "Search")
 			echo "Description: " . $post['description'];
 			echo "<br><br><br><br>";
 			echo '<a href="favorite.php">Click to Favorite this Recipe.</a>';
-			
+
 		}
 	}
 		
