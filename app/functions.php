@@ -21,6 +21,12 @@ if($choice == "Search")
 	{
 		$query = $_POST["query"];
 		$response = get_recipes($query);
+	
+		if(isset($response)) {
+			foreach($response as $post){
+				echo $post['title'];
+			}
+		}
 		
 		//will probably have to add php templating to display results
 		

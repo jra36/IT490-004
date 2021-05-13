@@ -32,12 +32,14 @@ function request_processor($req){
 		case "echo":
 			return array("return_code"=>'0', "message"=>"Echo: " .$req["message"]);
 		case "query":
-			/*
-			$stmt = $db->prepare("SELECT * FROM Recipes WHERE query like :query");
-			$result = $stmt->execute([":query"=>"%$req['query']%"]);
+			$db = getDB();
+			$stmt = $db->prepare("SELECT * FROM Recipes WHERE name like :query");
+			$query = $req['query'];
+			$result = $stmt->execute([":query"=>"%$query%"]);
 			
 			if ($result) {
-				$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+				$response = $stmt->fetchAll(PDO::FETCH_ASSOC);
+			}
 				
 		        //Fetch API	
 			if(!results || count($results) === 0) {
@@ -48,18 +50,20 @@ function request_processor($req){
 			$id = $post['id'];
 			$response = get_recipe_info($id);
 			}
+		}
+	}
 			
 			foreach ($response as $r) {
-			$q = [
-			     "INSERT INTO Recipes (name of many columns) VALUES (:title, :nutrient1, :ingredient2])
-			  ]
+			$q = "INSERT INTO Recipes (title) VALUES (:title)";
+			
 			  
 			   $db = getDB();
 			   $stmt = $db->prepare($q);
-			   $stmt->execute([":title=>$r['title'], ":nutrient1:"=>$r['nutrient1'], ":ingredient2:"=>$r['ingredient2']);
-			
+			    $stmt->execute([":title"=>$r['title']]);
+			}
+
 			  return $response;
-			*/
+			
 			
 		case "create":
 			return create_recipe($req["name"], $req["id"], $req["calories"], $req["ingredient1"], $req["ingredient2"], $req["ingredient3"], $req["image"], $req["description"]);
