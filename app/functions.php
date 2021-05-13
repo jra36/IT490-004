@@ -24,7 +24,23 @@ if($choice == "Search")
 	
 		if(isset($response)) {
 		foreach($response as $post){
+			echo $post['id'];
+			echo <br>;
 			echo $post['name'];
+			echo <br>;
+			echo $post['calories'];
+			echo <br>;
+			echo $post['ingredient1'];
+			echo <br>;
+			echo $post['ingredient2'];
+			echo <br>;
+			echo $post['ingredient3'];
+			echo <br>;
+			echo $post['image'];
+			echo <br>;
+			echo $post['description'];
+			echo <br>;
+			
 		}
 	}
 		
