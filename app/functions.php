@@ -61,7 +61,7 @@ if($choice == "Clear")
 	{
 		$id = $_POST["id"]; 
 		$response = delete_recipe($id);
-		if($response) {
+		if($response["status" == 200) {
 			echo "Recipe successfully deleted!";
 		}
 	else {
