@@ -7,6 +7,7 @@ require(__DIR__."/MQFunctions/register.php");
 require(__DIR__."/MQFunctions/get_recipes.php");
 require(__DIR__."/MQFunctions/create.php");
 require(__DIR__."/MQFunctions/delete.php");
+require(__DIR__."/MQFunctions/send_user_recipe.php");
 //TODO include other functions here as they're developed
 //TODO include only this file when you need to use any of the functions
 ?>
