@@ -59,7 +59,7 @@ function request_processor($req){
 			  
 			   $db = getDB();
 			   $stmt = $db->prepare($q);
-			   $stmt->execute([":title=>$r['title']);
+			    $stmt->execute([":title"=>$r['title']]);
 			}
 
 			  return $response;
