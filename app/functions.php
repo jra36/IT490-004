@@ -23,8 +23,10 @@ if($choice == "Search")
 		$response = get_recipes($query);
 	
 		if(isset($response["results"])) {
-		/foreach($response["results"] as $post){
+		foreach($response["results"] as $post){
 			echo $post['title'];
+		}
+	}
 		
 	
 	
