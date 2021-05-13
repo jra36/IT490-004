@@ -22,16 +22,43 @@ if($choice == "Search")
 		$query = $_POST["query"];
 		$response = get_recipes($query);
 	
-		if(isset($response["results"])) {
-			foreach($response["results"] as $post){
-			 echo $post['title'];
-			echo "<img src="$post["image"]" height="200px" width="200px">";
+		//if(isset($response["results"])) {
+		//	foreach($response["results"] as $post){
+			// echo $post['title'];
+			//echo "<img src="$post["image"]" height="200px" width="200px">";
+	
+		<?php  if(isset($response["results"])): ?>		
+		<?php foreach($response["results"] as $post): ?>
+		<article>
+			<header>
+				<h3><?php echo $post['title'];?></h3>
+			</header>
+			<section>
+				<h4><u>ID of Recipe</u></h3>
+				<p><?php echo $post['id'];?></p>
+			</section>
+			<section>
+				<h4><u>Likes</u></h4>
+				<p><?php echo $post['likes'];?></p>
+			</section>
+			<section>
+				<h4><u>Used Ingredient Count</u></h5>
+				<p><?php echo $post['usedIngredientCount'];?></p>
+			</section>
+			<section>
+				<h4><u>More Information To Follow.</u></h5>
+				<p><?php echo "TBD";?></p>
+			</sections>
+			<hr>
+			
+		</article>
+	<?php endforeach; ?>
+	<?php else: ?>
+		<div>No Recipes Found For Your Query.</div>
+
+	<?php endif; ?>
 				
-				
-			}
-		}
-				
-		
+					
 		
 		
 	}
