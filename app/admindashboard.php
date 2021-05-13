@@ -4,7 +4,7 @@ echo '<a href="logout.php">Click here to logout!</a>';
 ?>
 
 <!DOCTYPE html>
-
+<html>
 <meta charset = "utf-8">
 
 <head>
@@ -16,7 +16,6 @@ body {
 }
 </style>
 </head>
-</body>
 
 
 <style> selector {property:value;}
@@ -41,20 +40,17 @@ form{margin:auto; border:2px dashed black; padding:20px; width:300px; }
 <div id = "ingredient1"  ><input type = text name= "ingredient1"   > Enter Ingredient 1<br></div>
 <div id = "ingredient2"  ><input type = text name= "ingredient2"   > Enter Ingredient 2<br></div>
 <div id = "ingredient3"  ><input type = text name= "ingredient3"   > Enter Ingredient 3<br></div>
-
 <div id = "image"  ><input type = text name= "image"   > Enter URL of Recipe Image<br></div>
-
-<div id = "description">
+<div id = "description"  >
 <textarea name =description rows="4" col="50">
 Enter a description of the recipe.
 	</textarea> Enter description
- 
 </div> 
-<input type = submit>   
 <br>
+<input type = submit>
 </form>
 
-
+</html>
 <script>
 var ptrCreate = document.getElementById("Create")
 var ptrSearch = document.getElementById("Search")
@@ -81,7 +77,8 @@ function F(){
 	ptrIngredient1.style.display =  "none"
 	ptrIngredient2.style.display =  "none"
 	ptrIngredient3.style.display =  "none"
-        ptrDescription.style.display =  "none"
+    ptrDescription.style.display =  "none"
+    ptrImage.style.display =  "none"
 	
 	
 	if(this.value == "Create") {
@@ -92,7 +89,7 @@ function F(){
 		ptrIngredient2.style.display =  "block"
 		ptrIngredient3.style.display =  "block"
 		ptrImage.style.display = "block"
-                ptrDescription.style.display = "block"
+        ptrDescription.style.display = "block"
 	
 	}
 	if(this.value == "Search"){
