@@ -36,8 +36,8 @@ if($choice == "Search")
 			echo <br>;
 			echo $post['ingredient3'];
 			echo <br>;
-			echo $post['image'];
-			echo <br>;
+			//echo $post['image'];
+			//echo <br>;
 			echo $post['description'];
 			echo <br>;
 			
