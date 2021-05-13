@@ -24,7 +24,7 @@ if($choice == "Search")
 	
 		if(isset($response["results"])) {
 			foreach($response["results"] as $post){
-				echo $post['title'];
+				echo $post['title'] . "\n";
 			}
 		}
 		
