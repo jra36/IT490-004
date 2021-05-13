@@ -77,6 +77,7 @@ function request_processor($req){
 			$id = $post['id'];
 			$response = get_recipe_info($id);
 			}
+		}
 			return $response;
 			
 			
