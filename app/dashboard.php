@@ -10,12 +10,12 @@ p.dashed {
 	background-color: offwhite;
  
 }
-/*body {
+body {
   background-image: url('https://mommyshomecooking.com/wp-content/uploads/2019/05/Easy-Strawberry-Sauce-Recipe-Photo-15.jpg');
   background-size: 700px 800px;
   
  
-}*/
+}
 h1 {
   color: black;
   font-family: Cursive;
