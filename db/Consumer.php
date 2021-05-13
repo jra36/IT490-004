@@ -67,8 +67,16 @@ function request_processor($req){
 
 			  return $response;
 			  */
+			//$response = get_recipe_id($req['query']);
+			//var_export($response, true);
+			
 			$response = get_recipe_id($req['query']);
-			var_export($response, true);
+				
+			if(isset($response["results"])){
+			foreach($response["results"] as $post){
+			$id = $post['id'];
+			$response = get_recipe_info($id);
+			}
 			return $response;
 			
 			
