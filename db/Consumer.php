@@ -53,7 +53,7 @@ function request_processor($req){
 			$response = get_recipe_info($id);
 			}
 		}
-	}
+	//}
 			
 			foreach ($response as $r) {
 			$q = "INSERT INTO Recipes (title) VALUES (:title)";
