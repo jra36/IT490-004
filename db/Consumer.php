@@ -85,6 +85,16 @@ function request_processor($req){
 			return create_recipe($req["name"], $req["id"], $req["calories"], $req["ingredient1"], $req["ingredient2"], $req["ingredient3"], $req["image"], $req["description"]);
 		case "delete":
 			return delete_recipe($req["id"]);
+			
+		case "query2":
+			$db = getDB();
+			$stmt = $db->prepare("SELECT * FROM Recipes WHERE name like :query");
+			$query = $req['query'];
+			$result = $stmt->execute([":query"=>"%$query%"]);
+			if ($result) {
+				$response = $stmt->fetchAll(PDO::FETCH_ASSOC);
+			}
+			return $response;
 	}
 	return array("return_code" => '0',
 		"message" => "Server received request and processed it");
