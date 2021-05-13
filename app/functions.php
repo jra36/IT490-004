@@ -25,7 +25,8 @@ if($choice == "Search")
 		if(isset($response["results"])) {
 			foreach($response["results"] as $post){
 			 echo $post['title'];
-			<img height="200px" width="200px" src="echo $post['image'];"/>
+			echo $post['image'];
+			//<img height="200px" width="200px" src="echo $post['image'];"/>
 				
 			}
 		}
