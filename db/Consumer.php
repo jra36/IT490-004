@@ -32,7 +32,7 @@ function request_processor($req){
 		case "echo":
 			return array("return_code"=>'0', "message"=>"Echo: " .$req["message"]);
 		case "query":
-			return array("message"=>"Hi");
+			
 			/*
 			$db = getDB();
 			$stmt = $db->prepare("SELECT * FROM Recipes WHERE name like :query");
@@ -67,6 +67,8 @@ function request_processor($req){
 
 			  return $response;
 			  */
+			$response = get_recipe_id($req['query']);
+			return $response;
 			
 			
 		case "create":
