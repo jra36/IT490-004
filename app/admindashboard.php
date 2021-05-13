@@ -92,7 +92,7 @@ function F(){
 		ptrIngredient2.style.display =  "block"
 		ptrIngredient3.style.display =  "block"
 		ptrImage.style.display = "block"
-        ptrDescription.style.display = "block"
+                ptrDescription.style.display = "block"
 	
 	}
 	if(this.value == "Search"){
