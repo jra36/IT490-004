@@ -25,21 +25,21 @@ if($choice == "Search")
 		if(isset($response)) {
 		foreach($response as $post){
 			echo "<br><br>";
-			echo $post['id'];
+			echo "ID: " . $post['id'];
 			echo "<br>";
-			echo $post['name'];
+			echo "Name: " . $post['name'];
 			echo "<br>";
-			echo $post['calories'];
+			echo "Calories: " . $post['calories'];
 			echo "<br>";
-			echo $post['ingredient1'];
+			echo "First Ingredient: " . $post['ingredient1'];
 			echo "<br>";
-			echo $post['ingredient2'];
+			echo "Second Ingredient: " . $post['ingredient2'];
 			echo "<br>";
-			echo $post['ingredient3'];
+			echo "Third Ingredient: " . $post['ingredient3'];
 			echo "<br>";
-			echo $post['image'];
+			echo "Image: " . $post['image'];
 			echo "<br>";
-			echo $post['description'];
+			echo "Description: " . $post['description'];
 			echo "<br>";
 			
 		}
