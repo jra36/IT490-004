@@ -24,7 +24,9 @@ if($choice == "Search")
 	
 		if(isset($response)) {
 		foreach($response as $post){
-			echo "<img src="$post["image"]" height="42" width="42">";
+			$image = $post["image"];
+			$imageData = base64_encode(file_get_contents($image));
+			echo '<img src="data:image/jpeg;base64,'.$imageData.'">';
 			echo "<br><br>";
 			echo "ID: " . $post['id'];
 			echo "<br>";
