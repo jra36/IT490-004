@@ -54,7 +54,7 @@ if($choice == "Search")
 
 	<?php endif; ?>
 		
-		//will probably have to add php templating to display results
+		
 		
 		
 	}
