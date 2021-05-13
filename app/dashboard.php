@@ -1,3 +1,7 @@
+<?php
+echo '<a href="register.php">Click here to logout!</a>';
+?>
+
 <!DOCTYPE html>
 <html>
 <meta charset="UTF-8">
@@ -39,7 +43,7 @@ h1 {
 <?php
 session_start();
 require(__DIR__."/MQPublish.inc.php");
-echo '<a href="register.php">Click here to logout!</a>';
+
 error_reporting(E_ALL);
 ini_set('display_errors', TRUE);
 
