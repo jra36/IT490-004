@@ -32,6 +32,7 @@ function request_processor($req){
 		case "echo":
 			return array("return_code"=>'0', "message"=>"Echo: " .$req["message"]);
 		case "query":
+			return array("message"=>"Hi");
 			/*
 			$db = getDB();
 			$stmt = $db->prepare("SELECT * FROM Recipes WHERE name like :query");
@@ -44,7 +45,7 @@ function request_processor($req){
 				
 		        //Fetch API	
 			if(!results || count($results) === 0) {
-			*/
+			
 			$response = get_recipe_id($req['query']);
 				
 			if(isset($response["results"])){
@@ -65,6 +66,7 @@ function request_processor($req){
 			}
 
 			  return $response;
+			  */
 			
 			
 		case "create":
