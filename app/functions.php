@@ -40,8 +40,6 @@ if($choice == "Search")
 			echo "<br>";
 			echo "Third Ingredient: " . $post['ingredient3'];
 			echo "<br>";
-			//echo "Image: " . $post['image'];
-			//echo "<br>";
 			echo "Description: " . $post['description'];
 			echo "<br><br><br><br>";
 			
