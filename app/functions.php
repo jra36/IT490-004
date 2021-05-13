@@ -1,5 +1,6 @@
 <?php
 require(__DIR__."/MQPublish.inc.php"); //MQPublish.inc.php would include a require for all the functions located in app/MQFunctions
+require(__DIR__."/../db/DBFunctions/favorite.php");
 echo '<br><br><a href="admindashboard.php">Click here to go back to the list of services!</a><br><br>'; 
 
 $choice = $_POST["choice"];
@@ -42,6 +43,7 @@ if($choice == "Search")
 			echo "<br>";
 			echo "Description: " . $post['description'];
 			echo "<br><br><br><br>";
+			echo '<a href="favorite.php">Click to Favorite this Recipe.</a>';
 			
 		}
 	}
