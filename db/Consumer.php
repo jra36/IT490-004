@@ -68,6 +68,7 @@ function request_processor($req){
 			  return $response;
 			  */
 			$response = get_recipe_id($req['query']);
+			var_export($response, true);
 			return $response;
 			
 			
