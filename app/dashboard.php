@@ -27,7 +27,7 @@ h1 {
 <body>
 <b><h1 style="font-size:50px;"><p class="dashed">All About Strawberry Recipes</h1></b></p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <b><h1 style="font-size:30px;"> </h></b>
-<form action = "functions.php" method="POST" autocomplete ="off">
+<form action = "" method="POST" autocomplete ="off">
 	<label for="query">Find recipes here:</label><br>
   	<input type="text" name="query" size = "35" >
   	<button type="submit" name="submit">Search For Recipes</button><br>
