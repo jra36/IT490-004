@@ -43,7 +43,7 @@ if($choice == "Search")
 			//echo "Image: " . $post['image'];
 			//echo "<br>";
 			echo "Description: " . $post['description'];
-			echo "<br>";
+			echo "<br><br><br><br>";
 			
 		}
 	}
