@@ -72,12 +72,12 @@ function request_processor($req){
 			
 			$response = get_recipe_id($req['query']);
 				
-			if(isset($response["results"])){
+			/*if(isset($response["results"])){
 			foreach($response["results"] as $post){
 			$id = $post['id'];
 			$response = get_recipe_info($id);
-			}
-		}
+			}*/
+		//}
 			return $response;
 			
 			
