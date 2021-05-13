@@ -50,12 +50,12 @@ function request_processor($req){
 			if(isset($response["results"])){
 			foreach($response["results"] as $post){
 			$id = $post['id'];
-			$response2 = get_recipe_info($id);
+			$response = get_recipe_info($id);
 			}
 		}
 	//}
 			
-			foreach ($response2 as $r) {
+			foreach ($response as $r) {
 			$q = "INSERT INTO Recipes (title) VALUES (:title)";
 			
 			  
@@ -64,7 +64,7 @@ function request_processor($req){
 			    $stmt->execute([":title"=>$r['title']]);
 			}
 
-			  return $response2;
+			  return $response;
 			
 			
 		case "create":
