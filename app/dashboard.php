@@ -56,7 +56,6 @@ if(isset($_POST["submit"]) && isset($_POST["query"]) && !empty($_POST["query"]))
 	$response = get_recipes($query);
 ?>
 
-	//question if because the results returned by the get_recipe_info function doesn't have the keyword "results", is it sufficient to just say if(isset($response)
 	<?php  if(isset($response["results"])): ?>
 	<?php foreach($response["results"] as $post): ?>
 		<article>
