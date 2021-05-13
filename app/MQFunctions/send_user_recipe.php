@@ -6,7 +6,7 @@ function send_user_recipe($query){
 		require_once(__DIR__.'/../../lib/rabbitMQLib.inc');
 
 		$client = new RabbitMQClient(__DIR__.'/../../lib/testRabbitMQ.ini', 'secondQueue');
-		$msg = array("query"=>$query, "type"=>"query");
+		$msg = array("query"=>$query, "type"=>"query2");
 		$response = $client->send_request($msg);
 		return $response;
 	}
