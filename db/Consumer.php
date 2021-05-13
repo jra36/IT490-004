@@ -34,7 +34,8 @@ function request_processor($req){
 		case "query":
 			
 			$stmt = $db->prepare("SELECT * FROM Recipes WHERE name like :query");
-			$result = $stmt->execute([":query"=>"%$req['query']%"]);
+			$query = $req['query'];
+			$result = $stmt->execute([":query"=>"%$query%"]);
 			
 			if ($result) {
 				$response = $stmt->fetchAll(PDO::FETCH_ASSOC);
