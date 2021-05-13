@@ -44,7 +44,7 @@ if($choice == "Search")
 			echo "<br>";
 			echo "Description: " . $post['description'];
 			echo "<br><br><br><br>";
-			echo "<a href="../db/DBFunctions/favorite.php">Click to Favorite this Recipe.</a>";
+			echo '<a href="../db/DBFunctions/favorite.php">Click to Favorite this Recipe.</a>';
 
 		}
 	}
