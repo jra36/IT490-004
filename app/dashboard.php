@@ -1,3 +1,7 @@
+<?php
+echo '<a href="register.php">Click here to logout!</a>';
+?>
+
 <!DOCTYPE html>
 <html>
 <meta charset="UTF-8">
@@ -10,12 +14,12 @@ p.dashed {
 	background-color: offwhite;
  
 }
-/*body {
+body {
   background-image: url('https://mommyshomecooking.com/wp-content/uploads/2019/05/Easy-Strawberry-Sauce-Recipe-Photo-15.jpg');
   background-size: 700px 800px;
   
  
-}*/
+}
 h1 {
   color: black;
   font-family: Cursive;
@@ -27,7 +31,7 @@ h1 {
 <body>
 <b><h1 style="font-size:50px;"><p class="dashed">All About Strawberry Recipes</h1></b></p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <b><h1 style="font-size:30px;"> </h></b>
-<form action = "functions.php" method="POST" autocomplete ="off">
+<form action = "" method="POST" autocomplete ="off">
 	<label for="query">Find recipes here:</label><br>
   	<input type="text" name="query" size = "35" >
   	<button type="submit" name="submit">Search For Recipes</button><br>
@@ -39,6 +43,7 @@ h1 {
 <?php
 session_start();
 require(__DIR__."/MQPublish.inc.php");
+
 error_reporting(E_ALL);
 ini_set('display_errors', TRUE);
 
@@ -56,9 +61,8 @@ if(isset($_POST["submit"]) && isset($_POST["query"]) && !empty($_POST["query"]))
 	$response = get_recipes($query);
 ?>
 
-	//question if because the results returned by the get_recipe_info function doesn't have the keyword "results", is it sufficient to just say if(isset($response)
-	<?php  if(isset($response["results"])): ?>
-	<?php foreach($response["results"] as $post): ?>
+		<?php  if(isset($response["results"])): ?>
+		<?php foreach($response["results"] as $post): ?>
 		<article>
 			<header>
 				<h3><?php echo $post['title'];?></h3>
@@ -88,6 +92,8 @@ if(isset($_POST["submit"]) && isset($_POST["query"]) && !empty($_POST["query"]))
 		<div>No Recipes Found For Your Query.</div>
 
 	<?php endif; ?>
+
+
 
 </div>
 </body>
